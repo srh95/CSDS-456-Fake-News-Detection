@@ -12,12 +12,10 @@ data.drop(data.columns[cols], axis=1, inplace=True)
 # Delete any rows with null or blank value
 data.dropna(axis=0, how='any', inplace=True)
 
-# Convert labels to true and false
-true = ["True", "Mostly-True", "Half-True"]
-false = ["Barely-True", "False", "Pants-Fire"]
-
+# Name columns
 data.columns =['Label', 'Statement']
 
+# Convert labels to true and false 
 data['Label'] = data['Label'].replace(['true', 'mostly-true', 'half-true'], 'TRUE')
 data['Label'] = data['Label'].replace(['barely-true', 'false', 'pants-fire'], 'FALSE')
 
