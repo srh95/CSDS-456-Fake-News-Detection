@@ -1,6 +1,6 @@
 import pandas as pd
 
-file_name = "Liar-dataset/valid.tsv"
+file_name = "Liar-dataset/test.tsv"
 
 data = pd.read_csv(file_name, sep='\t', index_col=0)
 
@@ -21,4 +21,4 @@ data['Label'] = data['Label'].replace(['barely-true', 'false', 'pants-fire'], 'F
 
 # Output as csv file
 header = ['Statement', 'Label']
-data.to_csv("valid.csv", columns = header, index=False)
+data.to_csv("test.csv", columns = header, index=False)
